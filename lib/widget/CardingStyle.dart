@@ -11,22 +11,22 @@ class CardingStyle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.all(10),
-        padding: EdgeInsets.all(10),
-        height: 180,
+        padding: EdgeInsets.all(20),
+        height: 50,
 
-        decoration: BoxDecoration(
-            color: Colors.grey,
-            borderRadius:  BorderRadius.circular(20),
-            boxShadow:[
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(4, 4),
-                blurRadius: 10,
-              )
-            ]
-        ),
-        alignment: Alignment.center,
-        width: 200,
+        // decoration: BoxDecoration(
+        //     color: Colors.grey,
+        //     borderRadius:  BorderRadius.circular(1),
+        //     boxShadow:[
+        //       BoxShadow(
+        //         color: Colors.grey,
+        //         offset: Offset(1, 1),
+        //         blurRadius: 2,
+        //       )
+        //     ]
+        // ),
+        //alignment: Alignment.center,
+        width: 10,
 
         child: Column(
           children: [
@@ -34,7 +34,7 @@ class CardingStyle extends StatelessWidget {
               Image.network(image),
               Positioned(
                 bottom: 1,
-                  left: 1,
+                  left: 4,
                   child: Container(
                     padding: EdgeInsets.all(5),
                     color: Colors.amberAccent,
@@ -45,7 +45,7 @@ class CardingStyle extends StatelessWidget {
               ),
               Positioned(
                   bottom: 1,
-                  left: 145,
+                  right: 3,
                   child: Container(
                     padding: EdgeInsets.all(5),
                    color: Colors.amberAccent,
@@ -57,8 +57,8 @@ class CardingStyle extends StatelessWidget {
 
             Text(city,
               style: TextStyle(
-                fontSize: 22,
-                color: Colors.deepOrangeAccent,
+                fontSize: 50,
+                color: Colors.black,
               ),),
           ],
         )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'lifeCycleTest.dart';
+
 class Module_11 extends StatefulWidget {
   const Module_11({super.key});
 
@@ -26,6 +28,13 @@ class _Module_11State extends State<Module_11> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Hello'),
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context,
+              MaterialPageRoute(builder:
+                  (context)=>Lifecycletest()));
+        }, child: Text('Press me baby')),
       ),
     );
   }

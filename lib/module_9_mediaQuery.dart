@@ -63,7 +63,7 @@ class _ModuleMediaState extends State<ModuleMedia> {
             Wrap(
               spacing: 8.0, // Horizontal space between chips
               runSpacing: 4.0, // Vertical space between runs of chips
-              children: List.generate(20, (index) { // Generates a list of 10 Chip widgets
+              children: List.generate(20,(index){ // Generates a list of 10 Chip widgets
                 return Container(
                   color: Colors.red,// Background color for chips
                   height: 50,
