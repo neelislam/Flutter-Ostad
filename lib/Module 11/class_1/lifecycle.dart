@@ -16,7 +16,12 @@ class _Module_11State extends State<Module_11> {
     super.initState();
     print('From Init state');
   }
-
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print('didChangeDependencies');
+  }
 
   @override
   void dispose() {

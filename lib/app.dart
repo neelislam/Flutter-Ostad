@@ -4,6 +4,7 @@ import 'package:ostadflutter/module_9_mediaQuery.dart';
 import 'package:ostadflutter/module_9_todo.dart';
 import 'package:ostadflutter/statefull_class.dart';
 
+import 'Module 11/class_1/Alerts/alert.dart';
 import 'Module 11/class_1/lifecycle.dart';
 import 'login_page.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ import 'module_9_class_2.dart';
    Widget build(BuildContext context) {
      return  MaterialApp(
        title: 'Hell Yeah', // Title for the app in the task switcher
-       home: Module_11(), // The main screen of the application
+       home: Alert(), // The main screen of the application
        debugShowCheckedModeBanner: false, // Hides the "DEBUG" banner in debug mode
      );
    }

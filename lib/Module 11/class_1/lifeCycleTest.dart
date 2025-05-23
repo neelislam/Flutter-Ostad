@@ -14,7 +14,12 @@ class _LifecycletestState extends State<Lifecycletest> {
     super.initState();
     print('Init state from page 2');
   }
-
+@override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print('didChangeDependencies');
+  }
   @override
   void dispose() {
     print('Dispose from page 2');
