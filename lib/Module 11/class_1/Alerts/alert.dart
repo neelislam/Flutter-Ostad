@@ -130,7 +130,7 @@ class _AlertState extends State<Alert> {
               elevation: 30,),
 
             child: Text(
-                'Alert with Icon'
+                'Alert with Icon here'
             ),
           ),
           SizedBox(height: 35,),
