@@ -13,7 +13,7 @@ class _waterTrackerState extends State<waterTracker> {
 
       backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
-        title: Text('Water Tracker', style: TextStyle(
+        title: Text('Water Tracker App', style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),),
