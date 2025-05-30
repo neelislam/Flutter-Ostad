@@ -19,13 +19,13 @@ class calculator_buttons extends StatelessWidget {
           padding: EdgeInsets.all(24),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),),
-          backgroundColor: Colors.white60,
+          backgroundColor: color?? Colors.white60,
         ),
 
         onPressed: (){},
-        child: Text('1',
+        child: Text(text,
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 24,
             color: Colors.white,
           ),
         )
