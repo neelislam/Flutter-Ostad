@@ -14,21 +14,26 @@ class calculator_buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(24),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),),
-          backgroundColor: color?? Colors.white60,
-        ),
+    return Expanded(
+      child: Padding(
+        padding: EdgeInsets.all(8),
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.all(24),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),),
+              backgroundColor: color?? Colors.grey[800],
+            ),
 
-        onPressed: (){},
-        child: Text(text,
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.white,
-          ),
-        )
+            onPressed: (){},
+            child: Text(text,
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+              ),
+            )
+        ),
+      ),
     );
   }
 }
