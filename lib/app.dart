@@ -8,6 +8,7 @@ import 'Module 11/class 2/calculator_app.dart';
 import 'Module 11/class 3/waterTracker.dart';
 import 'Module 11/class_1/Alerts/alert.dart';
 import 'Module 11/class_1/lifecycle.dart';
+import 'Module 12/class 1.dart';
 import 'login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ostadflutter/Flutter_Class_2.dart';
@@ -20,8 +21,8 @@ import 'module_9_class_2.dart';
    @override
    Widget build(BuildContext context) {
      return  MaterialApp(
-       title: 'Hell Yeah', // Title for the app in the task switcher
-       home: CalculatorApp(), // The main screen of the application
+       title: 'Hell Yeah',
+       home: ExpenseTracker(), // The main screen of the application
        debugShowCheckedModeBanner: false, // Hides the "DEBUG" banner in debug mode
      );
    }
