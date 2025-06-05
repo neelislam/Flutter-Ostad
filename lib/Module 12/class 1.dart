@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
+import 'expense_model.dart';
 
 class ExpenseTracker extends StatefulWidget {
   const ExpenseTracker({super.key});
@@ -16,12 +18,18 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     'Enter',
     'Bills'
   ];
+
+  final List<Expense> _expense= [];
   double total = 0.0;
 
 
 
   void _showForm(BuildContext context){
     String selectedCategory = catagories.first;
+    TextEditingController titleController = TextEditingController();
+    TextEditingController amountController = TextEditingController();
+    DateTime expenseDateTime = DateTime.now();
+
     showModalBottomSheet(
         context: context,
         builder: (context){
@@ -37,6 +45,7 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
         mainAxisSize: MainAxisSize.min,
         children: [
           TextField(
+            controller: titleController,
             decoration: InputDecoration(
               labelText: 'Title'
             ),
@@ -44,7 +53,10 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
           ),
           SizedBox(height: 10,),
           TextField(
+            controller: amountController,
+          keyboardType : TextInputType.number,
             decoration: InputDecoration(
+
               labelText: 'Amount'
             ),
           ),
@@ -69,7 +81,20 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
 
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(onPressed: (){},
+            child: ElevatedButton(onPressed: (){
+
+
+              if(titleController.text.isNotEmpty || double.tryParse(amountController.text) !=null){
+                _addExpense(titleController.text,
+                    double.parse(amountController.text),
+                    expenseDateTime,selectedCategory);
+                  Navigator.pop(context);
+              }
+              else{
+
+              }
+
+            },
                 child: Text('Add expense') ),
           )
         ],
@@ -79,7 +104,13 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     );
   }
 
+void _addExpense(String title, double amount, DateTime date, String category){
+    setState(() {
+      _expense.add(Expense(title: title, amount: amount, date: date, category: category));
+      total +=amount;
 
+    });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -120,10 +151,34 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
                   ),),
                 ),
               ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: _expense.length,
+                  itemBuilder: (context, index){
+                return Card(
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.blueAccent,
+                      child: Text(_expense[index].category),
+
+                    ),
+                    title: Text(_expense[index].title),
+                    subtitle: Text(
+                        DateFormat.yMMMd().format(_expense[index].date)
+                    ),
+
+                  ),
+                );
+              }),
             )
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: ()=> _showForm(_expense as BuildContext),
+      child: Icon(Icons.add)),
 
       );
 
